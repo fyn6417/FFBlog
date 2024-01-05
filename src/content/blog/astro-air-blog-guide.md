@@ -173,6 +173,8 @@ npm run dev
 按照提示，将域名的 DNS 解析指向 vercel 的 DNS 服务器，然后点击 `Continue` 按钮。
 等到域名的 DNS 解析生效之后，vercle 会自动帮你将域名绑定到你的博客上，并且生成一个 SSL 证书。这时候，你就可以通过你的域名来访问你的博客了。
 
+以上内容来自于[austin2035](https://github.com/austin2035/blog) 感谢他！
+
 ## 遇到的坑
 
 Git clone到本地后修改完不能push 报错husky not found err 127
@@ -196,3 +198,5 @@ PATH="/usr/local/bin:$PATH"
 
 npx lint-staged
 ```
+
+问题解决 感谢观看
