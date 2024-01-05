@@ -1,16 +1,11 @@
 ---
-layout: "../../layouts/MarkdownPost.astro"
-title: "Astro Air Blog 详细使用指南"
-pubDate: 2023-2-28
-description: "作者通过二十张图来一步步教你搭建一个高颜值、免费、速度快的个人博客网站。"
-author: "Austin"
-cover:
-  url: "https://pic.lookcos.cn/i/2023/02/28/hey1iq.png"
-  square: "https://pic.lookcos.cn/i/2023/02/28/hey1iq.png"
-  alt: "cover"
-tags: ["技术", "Blog", "Astro"]
-theme: "light"
+pubDatetime: 2024-01-05T10:00:00.0Z
+title: Astro搭建博客
 featured: true
+draft: false
+tags:
+  - blog
+description: 使用Astro搭建博客 vercel部署到全球
 ---
 
 ![Astro Logo](https://pic.lookcos.cn/i/2023/02/28/hey1iq.png)
@@ -227,3 +222,19 @@ const tags = [...new Set(allPosts.map(post => post.frontmatter.tags).flat())];
 ## 进阶设置之四：修改公共头部和底部
 
 分别编辑 `src/components` 目录下的 `Header.astro` 和 `Footer.astro` 即可。需要有 HTML 的基础。
+
+## 遇到的坑
+
+Git clone到本地后修改完不能push 报错husky not found err 127
+
+解决方案：找到本地项目目录下/.husky.pre-commit文件
+
+终端输入where npx 拿到路径添加到
+
+```javascript
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+///去掉/npx 比如路径是/usr/local/bin/npx
+PATH="/usr/local/bin:$PATH"
+npx lint-staged
+```
